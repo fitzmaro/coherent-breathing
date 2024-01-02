@@ -8,16 +8,15 @@ function startBreathingExercise() {
     }
 
     let totalTime = duration * 60; // Convert minutes to seconds
-    let breathCycle = 10; // 5 seconds in, 5 seconds out
     let chime = document.getElementById('chime');
 
     let interval = setInterval(() => {
         chime.play();
-        totalTime -= breathCycle;
+        totalTime -= 5; // Subtract 5 seconds after each chime
 
         if (totalTime <= 0) {
             clearInterval(interval);
             alert("Exercise completed!");
         }
-    }, breathCycle * 1000);
+    }, 5000); // 5000 milliseconds (5 seconds) interval
 }
